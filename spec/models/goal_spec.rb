@@ -4,6 +4,8 @@ RSpec.describe Goal, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:imprevement_plan) }
+
     end
 
     describe "InDirect Associations" do
