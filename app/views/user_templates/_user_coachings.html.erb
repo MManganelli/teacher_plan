@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.coachings.each do |coaching| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/coachings/<%= coaching.id %>">
           <%= coaching.improvement_plan_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @comment.present? %>
   <% if @comment.errors.any? %>
     <% @comment.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form comment start -->
 <form action="/create_comment" method="post">
-<!-- Form comment end -->
 
-  <!-- Label and input for improvement_plan_id start -->
   <div class="form-group">
     <label for="improvement_plan_id">
       Improvement plan
     </label>
 
-    <!-- Input for improvement_plan_id start -->
     <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :description, @comment.improvement_plan_id), :class => "form-control") %>
-    <!-- Input for improvement_plan_id end -->
   </div>
-  <!-- Label and input for improvement_plan_id end -->
 
-  <!-- Label and input for goal_id start -->
   <div class="form-group">
     <label for="goal_id">
       Goal
     </label>
 
-    <!-- Input for goal_id start -->
     <%= select_tag(:goal_id, options_from_collection_for_select(Goal.all, :id, :created_at, @comment.goal_id), :class => "form-control") %>
-    <!-- Input for goal_id end -->
   </div>
-  <!-- Label and input for goal_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @comment.user_id), :class => "form-control") %>
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create comment

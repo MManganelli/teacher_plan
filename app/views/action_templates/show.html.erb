@@ -11,73 +11,58 @@
         </a>
       </div>
 
-      <!-- Edit link action start -->
       <div class="col">
         <a href="/actions/<%= @action.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit action
         </a>
       </div>
-      <!-- Edit link action end -->
 
-      <!-- Delete link action start -->
       <div class="col">
         <a href="/delete_action/<%= @action.id %>" class="btn btn-block btn-outline-secondary">
           Delete action
         </a>
       </div>
-      <!-- Delete link action end -->
     </div>
 
     <dl>
       <dt>
         Target date
       </dt>
-      <!-- Display target_date start -->
       <dd>
         <%= @action.target_date %>
       </dd>
-      <!-- Display target_date end -->
 
       <dt>
         Lead person
       </dt>
-      <!-- Display lead_person start -->
       <dd>
         <%= @action.lead_person %>
       </dd>
-      <!-- Display lead_person end -->
 
       <dt>
         Resources needed
       </dt>
-      <!-- Display resources_needed start -->
       <dd>
         <%= @action.resources_needed %>
       </dd>
-      <!-- Display resources_needed end -->
 
       <dt>
         Implementation specifics
       </dt>
-      <!-- Display implementation_specifics start -->
       <dd>
         <%= @action.implementation_specifics %>
       </dd>
-      <!-- Display implementation_specifics end -->
 
       <dt>
         Measure success
       </dt>
-      <!-- Display measure_success start -->
       <dd>
         <%= @action.measure_success %>
       </dd>
-      <!-- Display measure_success end -->
 
       <dt>
         Goal
       </dt>
-      <!-- Display goal_id start -->
       <dd>
         <% if @action.goal.present? %>
           <a href="/goals/<%= @action.goal_id %>">
@@ -85,28 +70,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display goal_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@action.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@action.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

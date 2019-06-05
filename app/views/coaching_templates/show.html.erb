@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link coaching start -->
       <div class="col">
         <a href="/coachings/<%= @coaching.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit coaching
         </a>
       </div>
-      <!-- Edit link coaching end -->
 
-      <!-- Delete link coaching start -->
       <div class="col">
         <a href="/delete_coaching/<%= @coaching.id %>" class="btn btn-block btn-outline-secondary">
           Delete coaching
         </a>
       </div>
-      <!-- Delete link coaching end -->
     </div>
 
     <dl>
       <dt>
         Improvement plan
       </dt>
-      <!-- Display improvement_plan_id start -->
       <dd>
         <% if @coaching.implementation_plan.present? %>
           <a href="/improvement_plans/<%= @coaching.improvement_plan_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display improvement_plan_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @coaching.user.present? %>
           <a href="/users/<%= @coaching.user_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@coaching.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@coaching.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

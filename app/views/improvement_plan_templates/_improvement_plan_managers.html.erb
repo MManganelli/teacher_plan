@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @improvement_plan.managers.each do |coaching| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/coachings/<%= coaching.id %>">
           <%= coaching.improvement_plan_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_coaching_from_implementation_plan/<%= coaching.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="improvement_plan_managers_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "improvement_plan_templates/improvement_plan_managers_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

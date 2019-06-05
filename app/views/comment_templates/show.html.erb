@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link comment start -->
       <div class="col">
         <a href="/comments/<%= @comment.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit comment
         </a>
       </div>
-      <!-- Edit link comment end -->
 
-      <!-- Delete link comment start -->
       <div class="col">
         <a href="/delete_comment/<%= @comment.id %>" class="btn btn-block btn-outline-secondary">
           Delete comment
         </a>
       </div>
-      <!-- Delete link comment end -->
     </div>
 
     <dl>
       <dt>
         Improvement plan
       </dt>
-      <!-- Display improvement_plan_id start -->
       <dd>
         <% if @comment.improvement_plan.present? %>
           <a href="/improvement_plans/<%= @comment.improvement_plan_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display improvement_plan_id end -->
 
       <dt>
         Goal
       </dt>
-      <!-- Display goal_id start -->
       <dd>
         <% if @comment.goal.present? %>
           <a href="/goals/<%= @comment.goal_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display goal_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @comment.user.present? %>
           <a href="/users/<%= @comment.user_id %>">
@@ -66,28 +57,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@comment.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@comment.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
