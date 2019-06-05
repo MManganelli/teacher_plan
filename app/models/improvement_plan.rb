@@ -18,6 +18,10 @@ class ImprovementPlan < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :managers,
+             :source => :user
+
   # Validations
 
 end

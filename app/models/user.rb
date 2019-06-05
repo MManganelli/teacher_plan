@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :implementation_plans,
+             :through => :coachings,
+             :source => :implementation_plan
+
   # Validations
 
   # Include default devise modules. Others available are:
