@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for imprevement_plan_id start -->
-    <input type="text" id="imprevement_plan_id" name="imprevement_plan_id" class="form-control" value="<%= @goal.imprevement_plan_id %>">
+    <%= select_tag(:imprevement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :description, @goal.imprevement_plan_id), :class => "form-control") %>
     <!-- Input for imprevement_plan_id end -->
   </div>
   <!-- Label and input for imprevement_plan_id end -->
