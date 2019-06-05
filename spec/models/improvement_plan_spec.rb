@@ -4,6 +4,8 @@ RSpec.describe ImprovementPlan, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:managers) }
+
     it { should have_many(:goals) }
 
     end
