@@ -62,7 +62,7 @@ class ImprovementPlansController < ApplicationController
     @improvement_plan = ImprovementPlan.find(params.fetch("id_to_modify"))
 
     @improvement_plan.description = params.fetch("description")
-    @improvement_plan.user_id = params.fetch("user_id")
+    
     @improvement_plan.status_id = params.fetch("status_id")
 
     if @improvement_plan.valid?
