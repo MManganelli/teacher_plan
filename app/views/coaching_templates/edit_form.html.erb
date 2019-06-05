@@ -1,0 +1,44 @@
+<h1>
+  Edit coaching #<%= @coaching.id %>
+</h1>
+
+<hr>
+
+<!-- Form coaching start -->
+<form action="/update_coaching/<%= @coaching.id %>" method="post">
+<!-- Form coaching end -->
+
+  <!-- Label and input for improvement_plan_id start -->
+  <div class="form-group">
+    <label for="improvement_plan_id">
+      Improvement plan
+    </label>
+
+    <!-- Input for improvement_plan_id start -->
+    <input type="text" id="improvement_plan_id" name="improvement_plan_id" class="form-control" value="<%= @coaching.improvement_plan_id %>">
+    <!-- Input for improvement_plan_id end -->
+  </div>
+  <!-- Label and input for improvement_plan_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @coaching.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update coaching
+  </button>
+</form>
+
+<hr>
+
+<a href="/coachings">
+  Go back
+</a>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Coaching resource:
+
+  # CREATE
+  get("/coachings/new", { :controller => "coachings", :action => "new_form" })
+  post("/create_coaching", { :controller => "coachings", :action => "create_row" })
+
+  # READ
+  get("/coachings", { :controller => "coachings", :action => "index" })
+  get("/coachings/:id_to_display", { :controller => "coachings", :action => "show" })
+
+  # UPDATE
+  get("/coachings/:prefill_with_id/edit", { :controller => "coachings", :action => "edit_form" })
+  post("/update_coaching/:id_to_modify", { :controller => "coachings", :action => "update_row" })
+
+  # DELETE
+  get("/delete_coaching/:id_to_remove", { :controller => "coachings", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Improvement plan resource:
 
   # CREATE
