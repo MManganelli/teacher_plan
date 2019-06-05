@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_comment/:id_to_remove", { :controller => "comments", :action => "destroy_row" })
+  get("/delete_comment_from_goal/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_goal" })
+  get("/delete_comment_from_user/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_user" })
+  get("/delete_comment_from_improvement_plan/:id_to_remove", { :controller => "comments", :action => "destroy_row_from_improvement_plan" })
 
   #------------------------------
 
@@ -37,6 +40,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_action/:id_to_remove", { :controller => "actions", :action => "destroy_row" })
+  get("/delete_action_from_goal/:id_to_remove", { :controller => "actions", :action => "destroy_row_from_goal" })
 
   #------------------------------
 
@@ -56,6 +60,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_goal/:id_to_remove", { :controller => "goals", :action => "destroy_row" })
+  get("/delete_goal_from_imprevement_plan/:id_to_remove", { :controller => "goals", :action => "destroy_row_from_imprevement_plan" })
 
   #------------------------------
 
@@ -103,6 +108,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_coaching/:id_to_remove", { :controller => "coachings", :action => "destroy_row" })
+  get("/delete_coaching_from_user/:id_to_remove", { :controller => "coachings", :action => "destroy_row_from_user" })
+  get("/delete_coaching_from_implementation_plan/:id_to_remove", { :controller => "coachings", :action => "destroy_row_from_implementation_plan" })
 
   #------------------------------
 
@@ -122,6 +129,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_improvement_plan/:id_to_remove", { :controller => "improvement_plans", :action => "destroy_row" })
+  get("/delete_improvement_plan_from_status/:id_to_remove", { :controller => "improvement_plans", :action => "destroy_row_from_status" })
+  get("/delete_improvement_plan_from_user/:id_to_remove", { :controller => "improvement_plans", :action => "destroy_row_from_user" })
 
   #------------------------------
 

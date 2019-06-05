@@ -55,6 +55,14 @@ class GoalsController < ApplicationController
     end
   end
 
+  def destroy_row_from_imprevement_plan
+    @goal = Goal.find(params.fetch("id_to_remove"))
+
+    @goal.destroy
+
+    redirect_to("/improvement_plans/#{@goal.imprevement_plan_id}", notice: "Goal deleted successfully.")
+  end
+
   def destroy_row
     @goal = Goal.find(params.fetch("id_to_remove"))
 

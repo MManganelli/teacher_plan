@@ -61,6 +61,14 @@ class ActionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_goal
+    @action = Action.find(params.fetch("id_to_remove"))
+
+    @action.destroy
+
+    redirect_to("/goals/#{@action.goal_id}", notice: "Action deleted successfully.")
+  end
+
   def destroy_row
     @action = Action.find(params.fetch("id_to_remove"))
 
