@@ -1,0 +1,104 @@
+<!-- Validation failure messages -->
+<% if @action.present? %>
+  <% if @action.errors.any? %>
+    <% @action.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new action
+</h1>
+
+
+<hr>
+
+<!-- Form action start -->
+<form action="/create_action" method="post">
+<!-- Form action end -->
+
+  <!-- Label and input for target_date start -->
+  <div class="form-group">
+    <label for="target_date">
+      Target date
+    </label>
+
+    <!-- Input for target_date start -->
+    <input type="text" id="target_date" name="target_date" class="form-control" value="<%= @action.target_date %>">
+    <!-- Input for target_date end -->
+  </div>
+  <!-- Label and input for target_date end -->
+
+  <!-- Label and input for lead_person start -->
+  <div class="form-group">
+    <label for="lead_person">
+      Lead person
+    </label>
+
+    <!-- Input for lead_person start -->
+    <input type="text" id="lead_person" name="lead_person" class="form-control" value="<%= @action.lead_person %>">
+    <!-- Input for lead_person end -->
+  </div>
+  <!-- Label and input for lead_person end -->
+
+  <!-- Label and input for resources_needed start -->
+  <div class="form-group">
+    <label for="resources_needed">
+      Resources needed
+    </label>
+
+    <!-- Input for resources_needed start -->
+    <input type="text" id="resources_needed" name="resources_needed" class="form-control" value="<%= @action.resources_needed %>">
+    <!-- Input for resources_needed end -->
+  </div>
+  <!-- Label and input for resources_needed end -->
+
+  <!-- Label and input for implementation_specifics start -->
+  <div class="form-group">
+    <label for="implementation_specifics">
+      Implementation specifics
+    </label>
+
+    <!-- Input for implementation_specifics start -->
+    <input type="text" id="implementation_specifics" name="implementation_specifics" class="form-control" value="<%= @action.implementation_specifics %>">
+    <!-- Input for implementation_specifics end -->
+  </div>
+  <!-- Label and input for implementation_specifics end -->
+
+  <!-- Label and input for measure_success start -->
+  <div class="form-group">
+    <label for="measure_success">
+      Measure success
+    </label>
+
+    <!-- Input for measure_success start -->
+    <input type="text" id="measure_success" name="measure_success" class="form-control" value="<%= @action.measure_success %>">
+    <!-- Input for measure_success end -->
+  </div>
+  <!-- Label and input for measure_success end -->
+
+  <!-- Label and input for goal_id start -->
+  <div class="form-group">
+    <label for="goal_id">
+      Goal
+    </label>
+
+    <!-- Input for goal_id start -->
+    <input type="text" id="goal_id" name="goal_id" class="form-control" value="<%= @action.goal_id %>">
+    <!-- Input for goal_id end -->
+  </div>
+  <!-- Label and input for goal_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create action
+  </button>
+</form>
+
+<hr>
+
+<a href="/actions">
+  Go back
+</a>
