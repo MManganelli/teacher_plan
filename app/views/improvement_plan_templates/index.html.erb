@@ -68,13 +68,21 @@
 
         <!-- Display improvement_plan.user_id start -->
         <td>
-          <%= improvement_plan.user.email %>
+          <% if improvement_plan.user.present? %>
+            <a href="/users/<%= improvement_plan.user.id %>">
+              <%= improvement_plan.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display improvement_plan.user_id end -->
 
         <!-- Display improvement_plan.status_id start -->
         <td>
-          <%= improvement_plan.status.status %>
+          <% if improvement_plan.status.present? %>
+            <a href="/statuses/<%= improvement_plan.status.id %>">
+              <%= improvement_plan.status.status %>
+            </a>
+          <% end %>
         </td>
         <!-- Display improvement_plan.status_id end -->
 

@@ -104,7 +104,11 @@
 
         <!-- Display action.goal_id start -->
         <td>
-          <%= action.goal.created_at %>
+          <% if action.goal.present? %>
+            <a href="/goals/<%= action.goal.id %>">
+              <%= action.goal.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display action.goal_id end -->
 

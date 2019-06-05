@@ -79,7 +79,11 @@
       </dt>
       <!-- Display goal_id start -->
       <dd>
-        <%= @action.goal_id %>
+        <% if @action.goal.present? %>
+          <a href="/goals/<%= @action.goal_id %>">
+            <%= @action.goal.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display goal_id end -->
 

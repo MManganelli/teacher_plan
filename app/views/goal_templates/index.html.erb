@@ -74,7 +74,11 @@
 
         <!-- Display goal.imprevement_plan_id start -->
         <td>
-          <%= goal.imprevement_plan.description %>
+          <% if goal.imprevement_plan.present? %>
+            <a href="/improvement_plans/<%= goal.imprevement_plan.id %>">
+              <%= goal.imprevement_plan.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display goal.imprevement_plan_id end -->
 

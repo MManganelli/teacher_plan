@@ -58,13 +58,21 @@
 
         <!-- Display coaching.improvement_plan_id start -->
         <td>
-          <%= coaching.implementation_plan.description %>
+          <% if coaching.implementation_plan.present? %>
+            <a href="/improvement_plans/<%= coaching.implementation_plan.id %>">
+              <%= coaching.implementation_plan.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display coaching.improvement_plan_id end -->
 
         <!-- Display coaching.user_id start -->
         <td>
-          <%= coaching.user.email %>
+          <% if coaching.user.present? %>
+            <a href="/users/<%= coaching.user.id %>">
+              <%= coaching.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display coaching.user_id end -->
 

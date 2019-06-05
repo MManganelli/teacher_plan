@@ -62,19 +62,31 @@
 
         <!-- Display comment.improvement_plan_id start -->
         <td>
-          <%= comment.improvement_plan.description %>
+          <% if comment.improvement_plan.present? %>
+            <a href="/improvement_plans/<%= comment.improvement_plan.id %>">
+              <%= comment.improvement_plan.description %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.improvement_plan_id end -->
 
         <!-- Display comment.goal_id start -->
         <td>
-          <%= comment.goal.created_at %>
+          <% if comment.goal.present? %>
+            <a href="/goals/<%= comment.goal.id %>">
+              <%= comment.goal.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.goal_id end -->
 
         <!-- Display comment.user_id start -->
         <td>
-          <%= comment.user.email %>
+          <% if comment.user.present? %>
+            <a href="/users/<%= comment.user.id %>">
+              <%= comment.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display comment.user_id end -->
 
