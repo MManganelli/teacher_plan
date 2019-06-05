@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/comments/new", { :controller => "comments", :action => "new_form" })
   post("/create_comment", { :controller => "comments", :action => "create_row" })
+  post("/create_comment_from_goal", { :controller => "comments", :action => "create_row_from_goal" })
+  post("/create_comment_from_improvement_plan", { :controller => "comments", :action => "create_row_from_improvement_plan" })
 
   # READ
   get("/comments", { :controller => "comments", :action => "index" })
@@ -29,6 +31,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/actions/new", { :controller => "actions", :action => "new_form" })
   post("/create_action", { :controller => "actions", :action => "create_row" })
+  post("/create_action_from_goal", { :controller => "actions", :action => "create_row_from_goal" })
 
   # READ
   get("/actions", { :controller => "actions", :action => "index" })
@@ -49,6 +52,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/goals/new", { :controller => "goals", :action => "new_form" })
   post("/create_goal", { :controller => "goals", :action => "create_row" })
+  post("/create_goal_from_improvement_plan", { :controller => "goals", :action => "create_row_from_improvement_plan" })
 
   # READ
   get("/goals", { :controller => "goals", :action => "index" })
@@ -97,6 +101,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/coachings/new", { :controller => "coachings", :action => "new_form" })
   post("/create_coaching", { :controller => "coachings", :action => "create_row" })
+  post("/create_coaching_from_improvement_plan", { :controller => "coachings", :action => "create_row_from_improvement_plan" })
 
   # READ
   get("/coachings", { :controller => "coachings", :action => "index" })
@@ -118,6 +123,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/improvement_plans/new", { :controller => "improvement_plans", :action => "new_form" })
   post("/create_improvement_plan", { :controller => "improvement_plans", :action => "create_row" })
+  post("/create_improvement_plan_from_status", { :controller => "improvement_plans", :action => "create_row_from_status" })
 
   # READ
   get("/improvement_plans", { :controller => "improvement_plans", :action => "index" })

@@ -1,0 +1,37 @@
+<!-- Form improvement_plan start -->
+<form action="/create_improvement_plan_from_status" method="post">
+<!-- Form improvement_plan end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @improvement_plan.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @improvement_plan.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for status_id start -->
+  <!-- Input for status_id start -->
+  <input type="hidden" name="status_id" value="<%= @status.id %>">
+  <!-- Input for status_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create improvement plan
+  </button>
+</form>

@@ -1,0 +1,37 @@
+<!-- Form comment start -->
+<form action="/create_comment_from_improvement_plan" method="post">
+<!-- Form comment end -->
+
+  <!-- Label and input for improvement_plan_id start -->
+  <!-- Input for improvement_plan_id start -->
+  <input type="hidden" name="improvement_plan_id" value="<%= @improvement_plan.id %>">
+  <!-- Input for improvement_plan_id end -->
+
+  <!-- Label and input for goal_id start -->
+  <div class="form-group">
+    <label for="goal_id">
+      Goal
+    </label>
+
+    <!-- Input for goal_id start -->
+    <input type="text" id="goal_id" name="goal_id" class="form-control" value="<%= @comment.goal_id %>">
+    <!-- Input for goal_id end -->
+  </div>
+  <!-- Label and input for goal_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @comment.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create comment
+  </button>
+</form>

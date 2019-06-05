@@ -33,6 +33,38 @@ class CommentsController < ApplicationController
     end
   end
 
+  def create_row_from_improvement_plan
+    @comment = Comment.new
+
+    @comment.improvement_plan_id = params.fetch("improvement_plan_id")
+    @comment.goal_id = params.fetch("goal_id")
+    @comment.user_id = params.fetch("user_id")
+
+    if @comment.valid?
+      @comment.save
+
+      redirect_to("/improvement_plans/#{@comment.improvement_plan_id}", notice: "Comment created successfully.")
+    else
+      render("comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_goal
+    @comment = Comment.new
+
+    @comment.improvement_plan_id = params.fetch("improvement_plan_id")
+    @comment.goal_id = params.fetch("goal_id")
+    @comment.user_id = params.fetch("user_id")
+
+    if @comment.valid?
+      @comment.save
+
+      redirect_to("/goals/#{@comment.goal_id}", notice: "Comment created successfully.")
+    else
+      render("comment_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @comment = Comment.find(params.fetch("prefill_with_id"))
 

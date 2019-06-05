@@ -6,6 +6,9 @@ class ImprovementPlansController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @coaching = Coaching.new
+    @goal = Goal.new
     @improvement_plan = ImprovementPlan.find(params.fetch("id_to_display"))
 
     render("improvement_plan_templates/show.html.erb")
@@ -28,6 +31,22 @@ class ImprovementPlansController < ApplicationController
       @improvement_plan.save
 
       redirect_back(:fallback_location => "/improvement_plans", :notice => "Improvement plan created successfully.")
+    else
+      render("improvement_plan_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_status
+    @improvement_plan = ImprovementPlan.new
+
+    @improvement_plan.description = params.fetch("description")
+    @improvement_plan.user_id = params.fetch("user_id")
+    @improvement_plan.status_id = params.fetch("status_id")
+
+    if @improvement_plan.valid?
+      @improvement_plan.save
+
+      redirect_to("/statuses/#{@improvement_plan.status_id}", notice: "ImprovementPlan created successfully.")
     else
       render("improvement_plan_templates/new_form_with_errors.html.erb")
     end

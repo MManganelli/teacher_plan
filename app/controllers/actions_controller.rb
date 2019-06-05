@@ -36,6 +36,25 @@ class ActionsController < ApplicationController
     end
   end
 
+  def create_row_from_goal
+    @action = Action.new
+
+    @action.target_date = params.fetch("target_date")
+    @action.lead_person = params.fetch("lead_person")
+    @action.resources_needed = params.fetch("resources_needed")
+    @action.implementation_specifics = params.fetch("implementation_specifics")
+    @action.measure_success = params.fetch("measure_success")
+    @action.goal_id = params.fetch("goal_id")
+
+    if @action.valid?
+      @action.save
+
+      redirect_to("/goals/#{@action.goal_id}", notice: "Action created successfully.")
+    else
+      render("action_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @action = Action.find(params.fetch("prefill_with_id"))
 
