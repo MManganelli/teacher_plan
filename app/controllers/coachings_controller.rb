@@ -1,6 +1,7 @@
 class CoachingsController < ApplicationController
   def index
-    @coachings = Coaching.page(params[:page]).per(10)
+    @q = Coaching.ransack(params[:q])
+    @coachings = @q.result(:distinct => true).includes(:implementation_plan, :user).page(params[:page]).per(10)
 
     render("coaching_templates/index.html.erb")
   end
