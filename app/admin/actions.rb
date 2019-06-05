@@ -1,4 +1,6 @@
 ActiveAdmin.register Action do
+
+ permit_params :target_date, :lead_person, :resources_needed, :implementation_specifics, :measure_success, :goal_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
