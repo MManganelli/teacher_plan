@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :coachings,
+             :dependent => :destroy
+
   has_many   :improvement_plans,
              :dependent => :destroy
 
