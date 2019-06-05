@@ -1,0 +1,32 @@
+<h1>
+  Edit status #<%= @status.id %>
+</h1>
+
+<hr>
+
+<!-- Form status start -->
+<form action="/update_status/<%= @status.id %>" method="post">
+<!-- Form status end -->
+
+  <!-- Label and input for status start -->
+  <div class="form-group">
+    <label for="status">
+      Status
+    </label>
+
+    <!-- Input for status start -->
+    <input type="text" id="status" name="status" class="form-control" value="<%= @status.status %>">
+    <!-- Input for status end -->
+  </div>
+  <!-- Label and input for status end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update status
+  </button>
+</form>
+
+<hr>
+
+<a href="/statuses">
+  Go back
+</a>
