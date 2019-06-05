@@ -1,6 +1,9 @@
 class ImprovementPlan < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :dependent => :destroy
+
   has_many   :managers,
              :class_name => "Coaching",
              :dependent => :destroy
