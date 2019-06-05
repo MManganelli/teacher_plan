@@ -1,0 +1,57 @@
+<h1>
+  Add a new improvement plan
+</h1>
+
+
+<hr>
+
+<!-- Form improvement_plan start -->
+<form action="/create_improvement_plan" method="post">
+<!-- Form improvement_plan end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for status_id start -->
+  <div class="form-group">
+    <label for="status_id">
+      Status
+    </label>
+
+    <!-- Input for status_id start -->
+    <input type="text" id="status_id" name="status_id" class="form-control">
+    <!-- Input for status_id end -->
+  </div>
+  <!-- Label and input for status_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create improvement plan
+  </button>
+</form>
+
+<hr>
+
+<a href="/improvement_plans">
+  Go back
+</a>
