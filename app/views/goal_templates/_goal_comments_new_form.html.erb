@@ -9,7 +9,7 @@
     </label>
 
     <!-- Input for improvement_plan_id start -->
-    <input type="text" id="improvement_plan_id" name="improvement_plan_id" class="form-control" value="<%= @comment.improvement_plan_id %>">
+    <%= select_tag(:improvement_plan_id, options_from_collection_for_select(ImprovementPlan.all, :id, :description, @comment.improvement_plan_id), :class => "form-control") %>
     <!-- Input for improvement_plan_id end -->
   </div>
   <!-- Label and input for improvement_plan_id end -->
